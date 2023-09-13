@@ -1,0 +1,28 @@
+/*import 'invoice/invoice'
+import 'invoice/html2canvas'
+import 'invoice/jspdf.min'
+
+import 'plugins/wow'
+import 'plugins/counterup'
+import 'plugins/isotope'
+import 'plugins/custom-parallax'
+import 'plugins/slick'
+import 'plugins/images-loaded'*/
+//import 'plugins/jquery-ui'
+/*import 'plugins/jquery.countdown.min'
+import 'plugins/jquery.elevatezoom'
+import 'plugins/jquery.syotimer.min'
+import 'plugins/jquery.vticker-min'
+import 'plugins/jquery.theia.sticky'
+import 'plugins/leaflet'
+import 'plugins/magnific-popup'
+import 'plugins/perfect-scrollbar'
+import 'plugins/scrollup'
+import 'plugins/select2.min'
+import 'plugins/slick'
+import 'plugins/slider-range'
+import 'plugins/TweenMax.min'
+import 'plugins/waypoints'
+import './shop*/
+
+import './main'
