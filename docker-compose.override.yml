@@ -5,3 +5,4 @@ services:
     ports:
       - "80"
       - "8001:80"
+###> symfony/mercure-bundle ###
