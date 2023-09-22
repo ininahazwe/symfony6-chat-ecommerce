@@ -1,0 +1,6 @@
+ <h1>Confirmation de votre utilisateur</h1>
+ <p>
+     Bonjour {{ user.username }}
+     lien d'activation valable jusqu'au {{ lifeTimeToken }}
+     à valider <a href="{{ absolute_url(path('account_verify', {token: token, id: user.id })) }}">ici</a>
+ </p>

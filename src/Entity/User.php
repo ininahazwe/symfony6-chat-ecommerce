@@ -73,9 +73,20 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $connexiondAt = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $document = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $tokenRegistration = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $tokenRegistrationLifeTime = null;
+
     public function __construct()
     {
         $this->createdAt = new \DateTime('now');
+        $this->isVerified = false;
+        $this->tokenRegistrationLifeTime = (new \DateTime('now'))->add(new \DateInterval("P1D"));
         $this->friendships = new ArrayCollection();
         $this->receiverFriendships = new ArrayCollection();
         $this->messages = new ArrayCollection();
@@ -368,6 +379,42 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setConnexionAt(?\DateTimeInterface $connexiondAt): static
     {
         $this->connexiondAt = $connexiondAt;
+
+        return $this;
+    }
+
+    public function getDocument(): ?string
+    {
+        return $this->document;
+    }
+
+    public function setDocument(?string $document): static
+    {
+        $this->document = $document;
+
+        return $this;
+    }
+
+    public function getTokenRegistration(): ?string
+    {
+        return $this->tokenRegistration;
+    }
+
+    public function setTokenRegistration(?string $tokenRegistration): static
+    {
+        $this->tokenRegistration = $tokenRegistration;
+
+        return $this;
+    }
+
+    public function getTokenRegistrationLifeTime(): ?\DateTimeInterface
+    {
+        return $this->tokenRegistrationLifeTime;
+    }
+
+    public function setTokenRegistrationLifeTime(\DateTimeInterface $tokenRegistrationLifeTime): static
+    {
+        $this->tokenRegistrationLifeTime = $tokenRegistrationLifeTime;
 
         return $this;
     }
