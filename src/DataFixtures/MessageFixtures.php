@@ -22,7 +22,7 @@ class MessageFixtures extends Fixture implements DependentFixtureInterface
             /**
              * @var Conversation $conversation
              */
-            $conversation = $this->getReference('conversation-' . $i);
+            $conversation = $this->getReference('conversation' . $i);
             $message->setSendBy($user);
             $message->setSendAt(new \DateTime());
             $message->setIsRead(true);
